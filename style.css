@@ -1,0 +1,45 @@
+
+
+
+#gameboard{
+
+    display: grid;
+    grid-template: repeat(3, 110px) / repeat(3, 110px);
+    justify-content: center;
+
+}
+
+.square{
+    border: 3px solid black;
+    font-size: 30px;
+    padding: 40px;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    caret-color: transparent;
+    cursor: grab;
+}
+
+
+h1{
+    display: flex;
+    justify-content: center;
+}
+#start{
+    display: grid;
+    justify-self: center;
+}
+
+.controls{
+ 
+    margin: 20px;
+
+    display: flex;
+    justify-content: center;
+  
+}
+.controls button{
+    width: 100px;
+    height: 50px;
+}
