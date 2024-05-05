@@ -5,7 +5,7 @@ const gameboard = (() => {
         gameboard.forEach((square, index) => {
             boardHTML += `<div class="square" id="square-${index}">${square}</div>`;
         });
-        document.querySelector("#gameboard").innerHTML = boardHTML; // Update the innerHTML here
+        document.querySelector("#gameboard").innerHTML = boardHTML; 
         
         const squares = document.querySelectorAll(".square");
         squares.forEach((square) => {
@@ -60,17 +60,17 @@ const Game = (() => {
         }
         
         gameboard.update(index, players[currentPlayerIndex].mark);
-        currentPlayerIndex = currentPlayerIndex === 0 ? 1 : 0;
         
         if(checkForWin(gameboard.getGameboard(), players[currentPlayerIndex].mark)){
             gameOver = true;
-            alert(`${players[currentPlayerIndex-1].name} won!`);
+            alert(`${players[currentPlayerIndex].name} wins!`);
         } else if (checkForTie(gameboard.getGameboard())) {
             gameOver = true;
             alert('It\'s a tie');
+        } else {
+            currentPlayerIndex = currentPlayerIndex === 0 ? 1 : 0;
         }
     };
-
     const reset = () => {
         for(let i = 0; i < 9; i++){
             gameboard.update(i,"");
